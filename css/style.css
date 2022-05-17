@@ -1,0 +1,190 @@
+/*font-family: 'Lexend Deca', sans-serif; - 400*/
+/*font-family: 'Big Shoulders Display', cursive; - 700*/
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 15px;
+    background-color: hsl(0, 0%, 95%);
+}
+
+/**COLORS**/
+
+.main-content__sedans{
+    background-color: hsl(31, 77%, 52%);
+    grid-area: sedans;
+}
+
+.main-content__suvs{
+    background-color: hsl(184, 100%, 22%);
+    grid-area: suvs;
+}
+
+.main-content__luxury{
+    background-color: hsl(179, 100%, 13%);
+    grid-area: luxury;
+}
+
+/**TYPOGRAFY AND COLORS**/
+
+.main-content__title{
+    font-family: 'Big Shoulders Display', cursive;
+    font-weight: 700;
+    color: hsl(0, 0%, 95%);
+    text-transform: uppercase;
+    font-size: 1.9rem;
+    line-height: 1.7;
+    padding: 13px 0;
+}
+
+.main-content__text{
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    color: hsla(0, 0%, 100%, 0.75);
+    font-size: 0.8rem;
+    line-height: 1.7;
+}
+
+.main-content__button{
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+    background-color: hsl(0, 0%, 95%);
+    display: block;
+    outline: none;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    margin-top: 75px;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    border-radius: 50px;
+}
+
+.main-content__button--color-orange{
+    color: hsl(31, 77%, 52%);
+}
+
+.main-content__button--color-dark-cyan{
+    color: hsl(184, 100%, 22%);
+}
+
+.main-content__button--color-very-dark-cyan{
+    color: hsl(179, 100%, 13%);
+}
+
+/**MOBILE FIRST**/
+
+/*grid container*/
+.main-content__elem{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 250px) 1fr;
+    grid-template-rows: 2fr 6fr 2fr;
+    grid-template-areas: 
+        ".   .     .      .   ."
+        ". sedans suvs luxury ."
+        ".   .     .      .   .";
+}
+
+.main-content__sedans,
+.main-content__suvs,
+.main-content__luxury{
+    padding: 35px;
+}
+
+.main-content__sedans{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 8px;
+}
+
+.main-content__luxury{  
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/*breakpoint 375px ou menos*/
+@media screen and (max-width: 680px) and (orientation: portrait) {
+
+    .main-content__elem{
+        height: auto;
+        grid-template-columns: 1fr 14fr 1fr;
+        grid-template-rows: 1fr 5fr 5fr 5fr 1fr;
+        grid-template-areas: 
+            ".   .    ."
+            ". sedans ."
+            ". suvs   ."
+            ". luxury ."
+            ".   .    .";
+    }
+
+    .main-content__contain-img img{
+        width: 40px;
+    }
+
+    .main-content__sedans{
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 0;
+    }
+
+    .main-content__luxury{  
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 0;
+    }
+
+    .main-content__button{
+        padding: 15px 28px 15px 28px;
+        margin-top: 18px;
+    }
+}
+
+/*breakpoint 800px ou mais*/
+@media screen and (max-width: 800px) and (orientation: landscape) {
+    
+    .main-content__elem{
+        height: 100vh;
+        grid-template-columns: 1fr 7fr 7fr 7fr 1fr;
+        grid-template-rows: 2fr 6fr 2fr;
+        grid-template-areas: 
+            ".   .     .      .   ."
+            ". sedans suvs luxury ."
+            ".   .     .      .   .";
+    }
+
+    .main-content__button{
+        padding: 10px 20px 10px 20px;
+        margin-top: 75px;
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .main-content__sedans{
+        border-top-left-radius: 8px;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 8px;
+    }
+
+    .main-content__luxury{  
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .main-content__title{
+        margin: 0;
+    }    
+}
+
+/*hover*/
+.main-content__button--hover:hover{
+    background-color: transparent;
+    color: hsl(0, 0%, 95%);
+    border: 2px solid hsl(0, 0%, 95%);
+}
